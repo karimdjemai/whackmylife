@@ -140,6 +140,7 @@ bot.on('message', (msg) => {
         files.forEach(file => {
           if (file.includes('file_') || imageContainsonlyNumbersAndIsNotNew(file, msg.chat.id)) {
               fs.unlink(file)
+              console.log(file+ ' deleted');
           }
         });
       })
@@ -151,10 +152,8 @@ bot.on('message', (msg) => {
 function imageContainsonlyNumbersAndIsNotNew(file, id)
 {
   filename = file.split(".")[0];
-  filetype = file.split(".")[1];
 
-  if(filetype == ".jpg" && !isNaN(filename) && filename != id) console.log(file);
-  return filetype == ".jpg" && !isNaN(filename) && filename != id;
+  return /[0-9]*.jpg/.test(file) && filename != id;
 }
 
 
