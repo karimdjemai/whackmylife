@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/karimdjemai/whackmylife#readme",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "fs": "0.0.1-security",
     "jimp": "^0.2.28",
     "node-telegram-bot-api": "^0.30.0",
